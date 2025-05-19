@@ -1,18 +1,18 @@
-# 📋 Protokoll der Teamsitzung
+# Protokoll der Teamsitzung
 
 **Datum**: 19. Mai 2025  
 **Ort**: Raum A101  
 **Beginn**: 10:00 Uhr  
 **Ende**: 11:30 Uhr  
 
-## 🧑‍🤝‍🧑 Anwesende
+## Anwesende
 
 - Anna Becker
 - Tom Müller
 - Lisa Schmidt
 - Jonas Wagner (Protokoll)
 
-## 📌 Tagesordnung
+## Tagesordnung
 
 1. Projektstand
 2. Aufgabenverteilung
