@@ -20,6 +20,9 @@
 
 ---
 
+## Inhaltsverzeichnis
+[TOC] 
+
 ## 1. Projektstand
 
 - Die erste Version der Webanwendung wurde erfolgreich deployed.
