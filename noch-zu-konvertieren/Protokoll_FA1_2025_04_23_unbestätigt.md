@@ -1,7 +1,15 @@
-
-# Protokoll der Sitzung vom [23.04.2025] 
-
 ---
+title: "Protokoll der Fachschaftschaftssitzung"
+titlepage-logo: "titlepage.png"
+author: [Fachschaft Computer Science & Application]
+date: "23.04.2025"
+titlepage: true
+toc-own-pag: true
+...
+
+
+# Protokoll der Sitzung vom [23.04.2025]    
+
 
 ## Formalia
 
@@ -43,6 +51,7 @@ Das Protokoll der letzten Sitzung vom 16.04.2025 wurde:
 ## 2. Agenda  
 
 **Geplante Themen:**  
+
 ### 1. Organisatorisches
 * Begrüßung [name=Vorsitz]
 * Bestätigung Protokoll [name=Vorsitz]
@@ -82,6 +91,7 @@ Das Protokoll der letzten Sitzung vom 16.04.2025 wurde:
 * GMB
     * Gespräch mit Studiendekanleiter, Fr 14.00
 * StuKo Informatik
+
 ### 3. Weitere Agenda Punkte
 
 
@@ -155,6 +165,7 @@ Das Protokoll der letzten Sitzung vom 16.04.2025 wurde:
 * GMB
     * Gespräch mit Studiendekanleiter, Fr 14.00
 * StuKo Informatik
+
 ## 3. Weitere Agenda Punkte
 * Alessandro Constantino [name=AC] wurde einstimmig als weiteres Mitglied in die Fachschaftsvertretung aufgenommen.
 
@@ -165,7 +176,7 @@ Das Protokoll der letzten Sitzung vom 16.04.2025 wurde:
 | Thema | Ja | Nein| Enthaltung | Ergebnis |
 |-------|-------|--------|-------------|----------|
 | Alessandro Constantino weiteres Mitglied Aufnahme | 9 | 0 | 0 | In Fachschaftsvertretung aufgenommen |
----
+
 
 ## 4. Sonstiges
 * Inventur Fachschaft & Tour der Räumlichkeiten
