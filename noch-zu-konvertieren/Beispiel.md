@@ -1,6 +1,6 @@
 ---
 title: "Testdatei"
-titlepage-logo: "titlepage.png"
+titlepage-logo: "titlepage.pdf"
 author: [Nils Hack]
 date: "23.04.2025"
 titlepage: true
@@ -92,7 +92,7 @@ def hello(name):
 
 ## 5. Bild einfügen
 
-![Beispielbild](beispielbild.png)
+![Beispielbild](titlepage.pdf)
 
 ---
 

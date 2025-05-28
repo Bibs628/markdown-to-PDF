@@ -1,6 +1,6 @@
 # Markdown zu PDF Konverter
 
-Dieses Projekt dient dazu, Markdown‑Dateien (`.md`) automatisch in PDF‑Dateien zu konvertieren. Mitgelieferte Skripte sorgen für die Installation der nötigen Software und die einfache Batch-Konvertierung – unter **Linux, macOS und Windows**.
+Dieses Projekt dient dazu, Markdown‑Dateien (`.md`) automatisch in PDF‑Dateien zu konvertieren. Mitgelieferte Skripte sorgen für die Installation der nötigen Software und die einfache Batch-Konvertierung – unter **Linux, macOS und Windows**. Falls du das auf **GitHub** liest schau bitte in der [VSt-Cloud](cloud.vst.hs-furtwangen.de) nach, es liegt im private Order der Fachschaft 1 - Computer Science & application
 
 Die PDF‑Erzeugung erfolgt mit [Pandoc](https://pandoc.org/) und einer LaTeX-Vorlage wie `Eisvogel.tex` oder `CSA.tex`.
 
@@ -141,11 +141,54 @@ markdown-to-PDF/
 
 ---
 
+## Anhänge hinzufügen
+
+Wenn du eine PDf hast aber noch Anhänge hinzufügen möchtest kannst du es nach dem folgenden Prinzip machen:
+
+### 🗂️ Ordnerstruktur
+
+Lege die Dateien wie folgt ab:
+
+anhaenge-hinzufuegen/
+├── Beispiel.pdf # Deine Ausgangsdatei
+└── anhaenge/ # Unterordner mit den Anhängen (nur PDFs)
+├── anhang1.pdf
+├── anhang2.pdf
+└── ...
+
+
+### Ausführung
+
+#### Unter Linux/macOS
+
+ Stelle sicher, dass das Skript ausführbar ist:
+   
+   `chmod +x merge_anhaenge_linux_mac.sh`
+   
+    Führe das Skript aus:
+
+   `./merge_attachments.sh`
+
+#### Unter Windows (PowerShell)
+
+    Öffne PowerShell im Projektverzeichnis.
+
+    Führe das Skript aus:
+
+   `.\merge_attachments_win.ps1`
+
+Die Datei am Ende soll dann den am ende ein "_anhaenge" am Ende haben wie z.B. Beispiel_anhaenge.pdf
+
+🔹 Hinweis:
+Nur .pdf-Dateien im Anhangsordner werden berücksichtigt.
+Die Reihenfolge der Anhänge richtet sich nach dem alphabetischen Dateinamen.
+
 ## Hinweise und Tipps
 
 - Die LaTeX-Templates (`CSA.tex`) kann individuell angepasst werden, jedoch ist das nicht zu Empfehlen.
 - Bilder für Titelseite oder Header/Fußzeile müssen im richtigen Ordner liegen (meistens im Projektverzeichnis, keine Unterstriche im Dateinamen verwenden). 
 - YAML-Optionen sind am Anfang einer .md datei zu verwenden und sollte diesem Format folgen:
+
 ```
 ---
 title: "Protokoll der Fachschaftschaftssitzung"
