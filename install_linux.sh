@@ -3,9 +3,15 @@ set -e
 
 echo "Installiere Pandoc und LaTeX (TeX Live) unter Linux..."
 
+read -p "Soll die Installation jetzt gestartet werden? (yes/no): " confirm
+if [[ "$confirm" != "yes" ]]; then
+    echo "Abgebrochen."
+    exit 0
+fi
+
 if command -v apt >/dev/null 2>&1; then
     sudo apt update
-    sudo apt install -y pandoc texlive texlive-latex-extra
+    sudo apt install -y pandoc texlive texlive-latex-extra texlive-fonts-recommended
 
 elif command -v pacman >/dev/null 2>&1; then
     sudo pacman -Syu --noconfirm pandoc texlive-core texlive-latexextra
