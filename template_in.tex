@@ -1,0 +1,132 @@
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% COPYRIGHT																	  %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+% Pandoc Template für die Verfasste Studierendenschaft
+
+% Copyright © 2023 Valentin Weber
+% Copyright © 2023 Justin Dretvic
+
+% Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+% The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+% THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% REMINDERS FOR LATER USAGE													  %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+% https://pandoc.org/MANUAL.html#metadata-blocks
+% pandoc -D latex > pandoc-default.tex
+% pandoc input.md -o output.pdf --from markdown --template template.tex
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% PREAMBEL																	  %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+\providecommand{\tightlist}{%
+  %\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
+}
+
+\documentclass{scrartcl}
+
+\RequirePackage{geometry}
+\geometry{
+    a4paper,
+    top=25mm,
+    bottom=25mm,
+    left=25mm,
+    right=25mm,
+}
+
+\RequirePackage{xcolor}
+\definecolor{headerColor}{RGB}{128,128,128}
+
+\RequirePackage{lastpage}
+\RequirePackage{fancyhdr}
+\pagestyle{fancy}
+\rhead{\fontsize{10}{0}\selectfont \textcolor{headerColor}{Seite \thepage{} von \pageref{LastPage}}}
+\lhead{\fontsize{10}{0}\selectfont \textcolor{headerColor}{Sitzungsprotokoll - $gremium$}}
+\cfoot{}
+\let\oldheadrule\headrule
+\renewcommand{\headrule}{\color{headerColor}\oldheadrule}
+
+\RequirePackage[pdfstartview=FitH]{hyperref}
+\hypersetup{
+    hidelinks,
+}
+
+\RequirePackage{amssymb} % used for symbols
+
+\renewcommand{\maketitle}{
+    \begin{center}
+        \begin{Huge}
+            \textbf{PROTOKOLL}
+        \end{Huge}
+    \end{center}
+}
+
+\newcommand{\sessionstart}[1]{\noindent\normalfont\large\textbf{Beginn der Sitzung:} #1}
+\newcommand{\sessionend}[1]{\noindent\normalfont\large\textbf{Ende der Sitzung:} #1}
+\newcommand{\sessionbreak}[2]{\noindent\normalfont\large\textbf{Pausierung der Sitzung:} von #1 bis #2 Uhr}
+
+\setlength\parindent{0pt}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% MAIN DOCUMENT																  %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+\begin{document}
+
+\thispagestyle{empty}
+\maketitle
+\hrule
+
+\renewcommand{\arraystretch}{1.5}
+\noindent
+\begin{tabular}{p{0.32\linewidth}p{0.01\linewidth}p{0.62\linewidth}}
+    \textbf{Gremium} &:& $gremium$ \\
+    \textbf{Sitzungsleitung} &:& $vorsitz$ \\
+    \textbf{Protokollant} &:& $protokollant$ \\
+    \textbf{Sitzungsnummer} &:& $sitzungsnummer$ \\
+    \textbf{Termin} (Datum)&:& $termin-datum$ \\
+    \textbf{Termin} (Zeit) &:& $termin-zeit$ Uhr\\
+    \textbf{Termin} (Ort) &:& $termin-ort$ \\
+
+    \textbf{Stimmberechtigte} (Anzahl) &:&
+    $mitglieder-anwesend/length$ \\
+
+    \textbf{Mitglieder} (anwesend) &:&
+    $for(mitglieder-anwesend/allbutlast)$
+        $it$,
+    $endfor$
+    $mitglieder-anwesend/last$ \\
+    
+
+    \textbf{Mitglieder} (abwesend) &:&
+    $for(mitglieder-abwesend/allbutlast)$
+        $it$,
+    $endfor$
+    $mitglieder-abwesend/last$ \\
+
+    \textbf{Sonstige} (anwesend) &:&
+    $for(sonstige-anwesend/allbutlast)$
+        $it$, 
+    $endfor$
+    $sonstige-anwesend/last$ \\
+\end{tabular}
+\hrule
+
+\renewcommand{\contentsname}{Agenda}
+\renewcommand{\baselinestretch}{1}\normalsize
+\tableofcontents
+\newpage
+
+\sessionstart{$zeit-start$ Uhr}
+
+$body$
+
+\sessionend{$zeit-ende$ Uhr}
+
+\end{document}

@@ -12,7 +12,7 @@ for file in "$INPUT_DIR"/*.md; do
   filename=$(basename "$file" .md)
   output_path="$OUTPUT_DIR/$filename.pdf"
 
-  echo "Verwende Template: $(realpath templates/custom.tex)"
+  echo "Verwende Template: $(realpath Eisvogel.tex)"
   echo "Verarbeite: $file -> $output_path"   # <--- Debug-Ausgabe
 
   # Pandoc Markdown zu PDF via LaTeX (xelatex empfohlen für bessere Unicode/Font-Unterstützung)
