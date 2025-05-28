@@ -1,11 +1,11 @@
-
 ---
 title: "Protokoll der Fachschaftschaftssitzung"
+logo-width: "5cm"
+titlepage-logo: "vslogo.png"
 author: [Fachschaft Computer Science & Application]
 date: "2017-02-20"
 keywords: [Markdown, Example]
 titlepage: true
-titlepage-logo: "vslogo.png"
 toc-own-pag: true
 ...
 
