@@ -930,6 +930,12 @@ $else$
 {
   \setstretch{1.4}
   \vfill
+  $if(titlepage-logo)$
+  \begin{center}
+    \includegraphics[width=\textwidth]{$titlepage-logo$}
+  \end{center}
+  \vskip 2em
+  $endif$
   \noindent {\huge \textbf{\textsf{$title$}}}
   $if(subtitle)$
   \vskip 1em
